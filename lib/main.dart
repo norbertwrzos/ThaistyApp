@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:meal_app/categories_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,41 +15,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'ThaistyApp',
       theme: ThemeData(
-          colorSchemeSeed:Colors.orange,
-              brightness: Brightness.light,
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(primary: Color(0xFF411530)),
+          accentColor: Color(0xFFD1512D),
+          canvasColor: Color(0xFFF5C7A9),
+          fontFamily: "Raleway",
           textTheme: ThemeData.light().textTheme.copyWith(
-              headline6: TextStyle(
-                  fontFamily: "OpenSans",
+                headline6: TextStyle(
+                  color: Color(0xFFF5E8E4),
+                  fontFamily: "Raleway",
                   fontWeight: FontWeight.normal,
-                  fontSize: 15)),
+                  fontSize: 20,
+                ),
+              ),
+
+          //appbar text theme
+
           appBarTheme: AppBarTheme(
               titleTextStyle: TextStyle(
-            fontFamily: "Quicksand",
+            color: Color(0xFFF5E8E4),
+            fontFamily: "Raleway",
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ))),
-      home: const MyHomePage(title: 'ThaistyApp'),
+      home: CategoriesScreen(),
     );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-      title: Text(widget.title),
-    ),
-    body: Center(
-      child: Text("dupa"),
-    ),);
   }
 }
